@@ -10,6 +10,44 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
     <link rel="icon" href="images/mklogo.png" type="image/x-icon">
 </head>  
+<div id="preloader">
+    <div id="hello-text">Hello</div>
+  </div>
+  <script>
+    const helloTexts = [
+      "Hello","Hola","Halo","Ciao",
+      "こんにちは","Hello","नमस्ते","Olá","Привет",
+      "مرحبا","Bonjour","你好","नमस्कार",
+      "Здраво","Ciao","สวัสดี","Hej","Mucho gusto"
+    ];
+  
+    let current = Math.floor(Math.random() * helloTexts.length); // random start
+    const textElement = document.getElementById("hello-text");
+    textElement.textContent = helloTexts[current];
+  
+    const interval = setInterval(() => {
+      current = (current + 1) % helloTexts.length;
+      textElement.textContent = helloTexts[current];
+    }, 250);
+
+    const MIN_LOAD_TIME = 2000; 
+    const start = Date.now();
+  
+    window.addEventListener("load", () => {
+      const elapsed = Date.now() - start;
+      const remaining = Math.max(0, MIN_LOAD_TIME - elapsed);
+  
+      setTimeout(() => {
+        clearInterval(interval);
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("fade-out");
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 250);
+      }, remaining);
+    });
+  </script>
+  
 <body>
     <header>
         <a href="#" class="logo">Ketan <span>M</span></a>
@@ -35,7 +73,7 @@
             <span>Hello, I'm</span>
             <h1>Ketan Mane</h1>
             <h2>I am <span class="role"></span> </h2>
-            <p>I'm a passionate Full-stack developer and AI Enthusiast focused on building clean, scalable web applications and solving real-world problems with code.</p>
+            <p>I'm a passionate Full-stack developer and AI Enthusiast focused on building clean, scalable web applications and solving real-world problems with code</p>
             <div class="btn-pink" id="btn">Lets Work Together!</div>
         </div>
     </section>
@@ -53,8 +91,8 @@
             <div class="about-text">
                 <p> I’m a full-stack developer who loves building things that are both beautiful and functional. I enjoy the challenge of crafting scalable web apps that not only work great but feel smooth and intuitive.
                     I spend my time exploring everything from front-end design to back-end logic, with a growing interest in data analytics and AI. Whether it’s building dashboards that make insights pop or integrating AI to create smarter user experiences, I love mixing creativity with technology.
-                    Currently working on projects in health tech, finance, and machine learning. Each one is helping me grow as a developer and a problem solver.</p>
-                <p>Let's build something meaningful. 🚀</p>
+                    Currently working on projects in health tech, finance, and machine learning. Each one is helping me grow as a developer and a problem solver</p>
+                <p>Let's build something meaningful 🚀</p>
                 <div class="information">
                     <div class="info-box">
                         <i class='bx bxs-phone-call'></i>
@@ -62,10 +100,10 @@
                     </div>
                     <div class="info-box">
                         <i class='bx bxl-gmail' ></i>
-                        <a href="mailto: ketanmane1137@gmail.com"><span>ketanmane1137@gmail.com</span></a>
+                        <span>ketanmane1137@gmail.com</span>
                     </div>
                 </div>
-                <a href="#" class="btn">Download CV</a>
+                <a href="https://drive.google.com/uc?export=download&id=1pKJIkY6pbtkIPoTh14Nd4YmZzGvpeD5P" class="btn">Download CV</a>
             </div>
         </div>
     </section>
@@ -120,22 +158,22 @@
             <span>My Latest Work</span>
         </div>
         <div class="projects-container">
-            <!-- Project 1 -->
+             <!-- Project 1 -->
             <div class="project-box">
                 <div class="project-img">
-                    <img src="projects/floral.jpg" alt="Floral Classification">
+                    <img src="images/healnest.png" alt="HealNest">
                     <div class="project-video">
-                        <video muted>
-                            <source src="projects/floral-video.mp4" type="video/mp4">
+                        <video autoplay muted loop>
+                            <source src="images/healnest.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Floral Classification</h3>
-                    <p>An AI-powered application that classifies different types of flowers using computer vision and machine learning techniques.</p>
+                    <h3>HealNest</h3>
+                    <p>An engaging mental health platform combining self-care education with interactive elements for emotional growth</p>
                     <div class="project-links">
-                        <a href="https://github.com/KetanMane" class="github-btn" target="_blank">GitHub</a>
-                        <a href="#" class="live-btn" target="_blank">Live Demo</a>
+                        <a href="https://github.com/KetanMane/healnest" class="github-btn" target="_blank">GitHub</a>
+                        <a href="https://healnest.vercel.app/" class="live-btn" target="_blank">Visit</a>
                     </div>
                 </div>
             </div>
@@ -143,80 +181,37 @@
             <!-- Project 2 -->
             <div class="project-box">
                 <div class="project-img">
-                    <img src="projects/finance.jpg" alt="Finance Flow">
+                    <img src="images/military.png" alt="IND Military Armoury">
                     <div class="project-video">
-                        <video muted>
-                            <source src="projects/finance-video.mp4" type="video/mp4">
+                        <video autoplay muted loop>
+                            <source src="images/military.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Finance Flow</h3>
-                    <p>A comprehensive financial management application for tracking expenses, budgeting, and visualizing spending patterns.</p>
+                    <h3>IND Military Armoury</h3>
+                    <p>An educational platform designed to simplify the understanding of India’s defense capabilities through organized data and visuals</p>
                     <div class="project-links">
-                        <a href="https://github.com/KetanMane" class="github-btn" target="_blank">GitHub</a>
-                        <a href="#" class="live-btn" target="_blank">Live Demo</a>
+                        <a href="https://github.com/KetanMane/ind-military-armoury" class="github-btn" target="_blank">GitHub</a>
+                        <a href="https://ind-military-armoury.vercel.app/" class="live-btn" target="_blank">Visit</a>
                     </div>
                 </div>
             </div>
+
 
             <!-- Project 3 -->
-            <div class="project-box">
-                <div class="project-img">
-                    <img src="projects/medmatch.jpg" alt="MedMatch">
-                    <div class="project-video">
-                        <video muted>
-                            <source src="projects/medmatch-video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>MedMatch</h3>
-                    <p>A healthcare platform that matches patients with appropriate medical specialists based on symptoms and medical history.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/KetanMane" class="github-btn" target="_blank">GitHub</a>
-                        <a href="#" class="live-btn" target="_blank">Live Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-box">
-                <div class="project-img">
-                    <img src="projects/military.jpg" alt="Indian Military Inventory">
-                    <div class="project-video">
-                        <video muted>
-                            <source src="projects/military-video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Indian Military Inventory</h3>
-                    <p>A comprehensive database and visualization system for tracking and analyzing Indian military equipment and resources.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/KetanMane" class="github-btn" target="_blank">GitHub</a>
-                        <a href="#" class="live-btn" target="_blank">Live Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 (centered on bottom) -->
             <div class="project-box center-project">
                 <div class="project-img">
-                    <img src="projects/portfolio.jpg" alt="Portfolio Website">
+                    <img src="images/portfolio.png" alt="Portfolio Website">
                     <div class="project-video">
-                        <video muted>
-                            <source src="projects/portfolio-video.mp4" type="video/mp4">
+                        <video autoplay muted loop>
+                            <source src="images/portfolio.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Portfolio Website</h3>
-                    <p>A personal portfolio website showcasing my skills, projects, and professional experience. Built with HTML, CSS, and JavaScript.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/KetanMane" class="github-btn" target="_blank">GitHub</a>
-                        <a href="#" class="live-btn" target="_blank">Live Demo</a>
-                    </div>
+                    <h3>Portfolio</h3>
+                    <p>A personal portfolio showcasing my skills, projects, and work experience through detailed displays and interactive features</p>
                 </div>
             </div>
         </div>

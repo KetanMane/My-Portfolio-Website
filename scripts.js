@@ -10,6 +10,7 @@ menu.onclick = () => {
 window.onscroll = () => {
     navbar.classList.remove("active");
 };
+
 // Dark Mode / light mode
 let darkmode = document.querySelector("#darkmode");
 darkmode.onclick = () => {
