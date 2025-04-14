@@ -51,7 +51,9 @@ I built this portfolio to:
 
 ---
 
-## 📝 License
-This project is licensed under the MIT License – see the LICENSE file for details
+## 📝 License  
+
+This project is licensed under the [MIT License](LICENSE) – see the LICENSE file for details
 ---
+
 
