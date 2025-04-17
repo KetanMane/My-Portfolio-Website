@@ -19,7 +19,6 @@ A sleek, responsive personal portfolio website showcasing my **skills**, **proje
 - **Frontend**: HTML, CSS, JavaScript  
 - **Animations**: CSS transitions, keyframes  
 - **Media**: Embedded video previews for projects  
-
 ---
 
 ## 📁 Folder Structure
